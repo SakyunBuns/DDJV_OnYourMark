@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: ground
+    uniqueID: 2310944605
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: decals
+    uniqueID: 495622451
+    locked: 0
+  - name: player
+    uniqueID: 268131283
+    locked: 0
+  - name: wall
+    uniqueID: 3928566541
+    locked: 0
+  - name: sky
+    uniqueID: 101213997
     locked: 0

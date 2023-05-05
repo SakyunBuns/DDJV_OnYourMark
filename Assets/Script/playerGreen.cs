@@ -6,40 +6,40 @@ public class playerGreen : MonoBehaviour
 {
     private bool m_facingRight = false;
 
-        private Rigidbody2D rig;
-        private Animator anim;
+    private Rigidbody2D rig;
+    private Animator anim;
 
-        public float vitesse;
-        private Vector2 movement;
+    public float vitesse;
+    private Vector2 movement;
 
-        [SerializeField]
-        private float force;
+    [SerializeField]
+    private float force;
 
-        // Start is called before the first frame update
-        void Start()
+    // Start is called before the first frame update
+    void Start()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+
+        if (movement.x != 0 || movement.y != 0)
         {
-            rig = GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
+            anim.SetBool("isWalking", true);
+            anim.SetFloat("horizontal", movement.x);
+            anim.SetFloat("vertical", movement.y);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+        else anim.SetBool("isWalking", false);
 
 
-            if (movement.x != 0 || movement.y != 0)
-            {
-                anim.SetBool("isWalking", true);
-                anim.SetFloat("horizontal", movement.x);
-                anim.SetFloat("vertical", movement.y);
-            }
-            else anim.SetBool("isWalking", false);
-
-
-        }
+    }
 
     private void FixedUpdate()
         {
@@ -56,8 +56,14 @@ public class playerGreen : MonoBehaviour
         }
     }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy" || LayerMask.LayerToName(collision.gameObject.layer) == "Camera" )
         {
+            EventManager.TriggerEvent("PlayerBeenHit", transform.position);
+        }
+
             //if (LayerMask.LayerToName(collision.gameObject.layer) == "Declancheur")
             //{
             //    Vector2 pushDirection = Vector2.zero;
@@ -92,25 +98,25 @@ public class playerGreen : MonoBehaviour
             //}
         }
 
-        public IEnumerator Death()
-        {
-            anim.SetBool("isDead", true);
-            //Instantiate(prefabNugget, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1.0f);
-            //StartCoroutine(fondu.GetComponent<FonduEntree>().FonduFin());
-            yield return new WaitForSeconds(2.0f);
+    public IEnumerator Death()
+    {
+        anim.SetBool("isDead", true);
+        //Instantiate(prefabNugget, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1.0f);
+        //StartCoroutine(fondu.GetComponent<FonduEntree>().FonduFin());
+        yield return new WaitForSeconds(2.0f);
             
-        }
+    }
 
-        IEnumerator danceVictory()
-        {
-            float randFloat = Random.Range(0.5f, 1.5f);
-            yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
-            movement = Random.insideUnitSphere;
-            yield return new WaitForSeconds(randFloat);
-            movement = Random.insideUnitSphere;
-            StartCoroutine(danceVictory());
-        }
+    IEnumerator danceVictory()
+    {
+        float randFloat = Random.Range(0.5f, 1.5f);
+        yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
+        movement = Random.insideUnitSphere;
+        yield return new WaitForSeconds(randFloat);
+        movement = Random.insideUnitSphere;
+        StartCoroutine(danceVictory());
+    }
 
     private void Flip() {
         m_facingRight = !m_facingRight;

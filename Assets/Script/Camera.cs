@@ -7,13 +7,13 @@ public class Camera : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    private Transform camera;
+    private Transform m_camera;
 
     void Start(){
-        camera = GetComponent<Transform>();
+        m_camera = GetComponent<Transform>();
     }
 
     void FixedUpdate(){
-        camera.transform.position += new Vector3(0, speed, 0);
+        m_camera.transform.position += new Vector3(0, speed, 0);
     }
 }

@@ -8,6 +8,25 @@ public class mainMenu : MonoBehaviour
     [SerializeField]
     private Transform m_menuconfirm;
 
+    [SerializeField]
+    private Transform m_labelTitle;
+
+    [SerializeField]
+    private Transform m_sparkleVFX;
+
+    private void Start()
+    {
+        StartCoroutine(TitleEntrance());
+    }
+
+    private void FixedUpdate()
+    {
+        if (m_labelTitle.transform.position.y > 395)
+        {
+            m_labelTitle.transform.position = m_labelTitle.position - new Vector3(0, 1.0f);
+        }
+    }
+
     public void OnPause()
     {
 
@@ -42,5 +61,11 @@ public class mainMenu : MonoBehaviour
     public void OnCancelQuit()
     {
         m_menuconfirm.transform.gameObject.SetActive(false);
+    }
+
+    private IEnumerator TitleEntrance() {
+        yield return new WaitForSeconds(0.5f);
+        print(m_labelTitle.transform.position.y);
+         
     }
 }

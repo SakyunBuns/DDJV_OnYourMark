@@ -14,10 +14,9 @@ public class mainMenu : MonoBehaviour
     [SerializeField]
     private Transform m_sparkleVFX;
 
-    private void Start()
-    {
-        StartCoroutine(TitleEntrance());
-    }
+    private float limitX = 500f;
+    private float limitY = 250f;
+
 
     private void FixedUpdate()
     {
@@ -44,7 +43,8 @@ public class mainMenu : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(GameStart());
+        
     }
 
     public void OnTryQuit()
@@ -63,9 +63,12 @@ public class mainMenu : MonoBehaviour
         m_menuconfirm.transform.gameObject.SetActive(false);
     }
 
-    private IEnumerator TitleEntrance() {
-        yield return new WaitForSeconds(0.5f);
-        print(m_labelTitle.transform.position.y);
-         
+    private IEnumerator GameStart() {
+        for (int nb_fx = 0; nb_fx < 15; nb_fx++) {
+            Vector3 randVect3 = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitY, limitY), 0);
+            Instantiate(m_sparkleVFX, transform.position + randVect3, transform.rotation);
+            yield return new WaitForSeconds(0.2f);
+        }
+        EventManager.TriggerEvent("PlayerReachedObjective", "allo");
     }
 }

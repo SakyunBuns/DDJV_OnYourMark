@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -47,12 +48,15 @@ TagManager:
   - name: decals
     uniqueID: 495622451
     locked: 0
-  - name: player
-    uniqueID: 268131283
-    locked: 0
   - name: wall
     uniqueID: 3928566541
     locked: 0
+  - name: player
+    uniqueID: 268131283
+    locked: 0
   - name: sky
     uniqueID: 101213997
+    locked: 0
+  - name: sky2
+    uniqueID: 840341489
     locked: 0

@@ -25,10 +25,10 @@ public class playerGreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
+        if (!anim.GetBool("isDead")) {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
 
         if (movement.x != 0 || movement.y != 0)
         {
@@ -61,7 +61,8 @@ public class playerGreen : MonoBehaviour
 
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy" || LayerMask.LayerToName(collision.gameObject.layer) == "Camera" )
         {
-            EventManager.TriggerEvent("PlayerBeenHit", transform.position);
+            anim.SetBool("isDead", true);
+            EventManager.TriggerEvent("GreenBeenHit", transform.position);
         }
 
             //if (LayerMask.LayerToName(collision.gameObject.layer) == "Declancheur")

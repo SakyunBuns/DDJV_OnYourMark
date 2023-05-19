@@ -42,14 +42,14 @@ TagManager:
   - name: ground
     uniqueID: 2310944605
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: decals
     uniqueID: 495622451
     locked: 0
   - name: decals2
     uniqueID: 3348135113
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: wall
     uniqueID: 3928566541

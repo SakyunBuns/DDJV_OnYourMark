@@ -48,6 +48,9 @@ TagManager:
   - name: decals
     uniqueID: 495622451
     locked: 0
+  - name: decals2
+    uniqueID: 3348135113
+    locked: 0
   - name: wall
     uniqueID: 3928566541
     locked: 0

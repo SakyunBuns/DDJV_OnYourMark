@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - FxTemporaire
+  - PlayerRed
+  - PlayerGreen
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - 
   - Interactable
-  - 
+  - PlayerRed
   - Player
   - Enemy
   - Camera

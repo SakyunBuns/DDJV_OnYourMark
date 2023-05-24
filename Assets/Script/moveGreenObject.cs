@@ -32,7 +32,7 @@ public class moveGreenObject : MonoBehaviour
     {
         if ((int)keyNumber == objectNumber)
         {
-            rig.bodyType = RigidbodyType2D.Dynamic;
+            // rig.bodyType = RigidbodyType2D.Dynamic;
             if (direction == "UP")
             {
                 rig.AddForce(Vector2.up * force);
@@ -53,14 +53,12 @@ public class moveGreenObject : MonoBehaviour
             {
                 Debug.Log("Invalid direction");
             }
-
-            StartCoroutine(SwitchToFixed());
-            
+            // StartCoroutine(SwitchToFixed());
         }
     }
 
-    private IEnumerator SwitchToFixed(){
-        yield return new WaitForSeconds(1.0f);
-        rig.bodyType = RigidbodyType2D.Static;
-    }
+    // private IEnumerator SwitchToFixed(){
+    //     yield return new WaitForSeconds(1.0f);
+    //     rig.bodyType = RigidbodyType2D.Static;
+    // }
 }

@@ -6,9 +6,10 @@ public class endScreen : MonoBehaviour
 {
 
     [SerializeField]
-    private float limitX = 10;
-    private float limitY = 5;
+    private float limitX = 3;
+    private float limitY = -1;
     private Transform[] list;
+    private Vector3 m_position_initial; 
 
     [SerializeField]
     private Transform wowFX;
@@ -18,20 +19,16 @@ public class endScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        m_position_initial = transform.position;
         StartCoroutine(GameStart());
     }
 
     private IEnumerator GameStart()
     {
+        Vector3 randVect = Random.insideUnitSphere;
+        transform.position = m_position_initial + randVect / 10;
 
-        for (int nb_fx = 0; nb_fx < 15; nb_fx++)
-        {
-            int idxVFX = Random.Range(0, 2);
-
-            Vector3 randVect3 = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitY, limitY), 0);
-            Instantiate(wowFX, transform.position + randVect3, transform.rotation);
-            yield return new WaitForSeconds(0.2f);
-        }
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(GameStart());
     }
 }

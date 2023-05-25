@@ -55,6 +55,7 @@ public class playerGreen : MonoBehaviour
         else if(!controlerOn){
             movement.x = 0;
             movement.y = 1;
+            vitesse = 1.5f;
             rig.transform.rotation *= Quaternion.Euler(0, 0, 3.0f);
         }
     }

@@ -22844,6 +22844,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628624999, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628625001, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1
@@ -23154,6 +23158,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628624999, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 897695522415254585, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -23425,11 +23433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5253627802172897531, guid: 9ef9d225f3fd7194a88c56a37fd2836b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1400001
+      value: -0.16000068
       objectReference: {fileID: 0}
     - target: {fileID: 5253627802172897531, guid: 9ef9d225f3fd7194a88c56a37fd2836b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.219999
+      value: -15.409997
       objectReference: {fileID: 0}
     - target: {fileID: 5253627802172897531, guid: 9ef9d225f3fd7194a88c56a37fd2836b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23478,6 +23486,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628624999, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 897695522415254585, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -30120,7 +30132,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016329630}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -33185,15 +33197,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626318036437760393, guid: 3945d61862746e54cb31d0c214ef998f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626318036437760393, guid: 3945d61862746e54cb31d0c214ef998f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.83
+      value: 4.8099995
       objectReference: {fileID: 0}
     - target: {fileID: 1626318036437760393, guid: 3945d61862746e54cb31d0c214ef998f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.07
+      value: -16.26
       objectReference: {fileID: 0}
     - target: {fileID: 1626318036437760393, guid: 3945d61862746e54cb31d0c214ef998f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33381,7 +33393,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229150136}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -34505,7 +34517,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391962845}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -35649,15 +35661,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 472656209767120473, guid: ea11ca92ff02e4740b94ecd07e96c30f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 472656209767120473, guid: ea11ca92ff02e4740b94ecd07e96c30f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.99
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 472656209767120473, guid: ea11ca92ff02e4740b94ecd07e96c30f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.03
+      value: -16.22
       objectReference: {fileID: 0}
     - target: {fileID: 472656209767120473, guid: ea11ca92ff02e4740b94ecd07e96c30f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35704,6 +35716,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628624999, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628625001, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1
@@ -35835,6 +35851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628624999, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628625001, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1
@@ -36006,7 +36026,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7434444833058756216, guid: d507d005cc378214bb49b71d697b188d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7434444833058756216, guid: d507d005cc378214bb49b71d697b188d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36321,6 +36341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628624999, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 628625001, guid: 41da97a06d06d6d41b7a1e2f30c9075b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1
@@ -36572,7 +36596,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141791745}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -36818,6 +36842,10 @@ PrefabInstance:
     - target: {fileID: 7428528575459563195, guid: a614bab9ae0902f4eb668ad200b458c3, type: 3}
       propertyPath: m_Name
       value: RedKeySpot_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377900515024271408, guid: a614bab9ae0902f4eb668ad200b458c3, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8660713948186176110, guid: a614bab9ae0902f4eb668ad200b458c3, type: 3}
       propertyPath: m_RootOrder

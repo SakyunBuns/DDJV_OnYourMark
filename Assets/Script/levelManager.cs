@@ -9,10 +9,14 @@ public class levelManager : MonoBehaviour
     private UnityAction<object> ev_redDeath;
     private UnityAction<object> ev_greenDeath;
     private UnityAction<object> ev_playerVictory;
+    private UnityAction<object> ev_redOut;
+    private UnityAction<object> ev_greenOut;
     
     private int currentLvlIdx;
     private bool isRedAlive;
     private bool isGreenAlive;
+    private bool isRedOut;
+    private bool isGreenOut;
 
     [SerializeField]
     private SpriteRenderer rendu;
@@ -24,16 +28,23 @@ public class levelManager : MonoBehaviour
     {
         isRedAlive = true;
         isGreenAlive = true;
+        isRedOut = false;
+        isGreenOut = false;
         currentLvlIdx = SceneManager.GetActiveScene().buildIndex;
         StartCoroutine(Fondu());
 
         ev_redDeath = new UnityAction<object>(redRestartLevel);
         ev_greenDeath = new UnityAction<object>(greenRestartLevel);
         ev_playerVictory = new UnityAction<object>(loadNextLevel);
+        ev_redOut = new UnityAction<object>(RedOut);
+        ev_greenOut = new UnityAction<object>(GreenOut);
 
         EventManager.StartListening("PlayerReachedObjective", ev_playerVictory);
         EventManager.StartListening("RedBeenHit", ev_redDeath);
         EventManager.StartListening("GreenBeenHit", ev_greenDeath);
+        EventManager.StartListening("RedOut", ev_redOut);
+        EventManager.StartListening("GreenOut", ev_greenOut);
+        
     }
 
     // Update is called once per frame
@@ -52,6 +63,24 @@ public class levelManager : MonoBehaviour
     void greenRestartLevel(object someObject) {
         isGreenAlive = false;
         if (!isRedAlive) {
+            SceneManager.LoadScene(currentLvlIdx);
+        }
+    }
+
+    void RedOut(object someObject) {
+        isRedOut = true;
+        if (isGreenOut) {
+            SceneManager.LoadScene(currentLvlIdx + 1);
+        }else if (!isGreenAlive) {
+            SceneManager.LoadScene(currentLvlIdx);
+        }
+    }
+
+    void GreenOut(object someObject) {
+        isGreenOut = true;
+        if (isRedOut) {
+            SceneManager.LoadScene(currentLvlIdx + 1);
+        }else if (!isRedAlive) {
             SceneManager.LoadScene(currentLvlIdx);
         }
     }

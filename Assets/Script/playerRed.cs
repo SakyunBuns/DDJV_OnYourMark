@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class playerRed : MonoBehaviour
 {
@@ -15,30 +17,47 @@ public class playerRed : MonoBehaviour
     [SerializeField]
     private float force;
 
+    private bool controlerOn = true;
+
+    private UnityAction<object> ev_teleporter;
+    private UnityAction<object> ev_out;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        ev_teleporter = new UnityAction<object>(Teleportation);
+        ev_out = new UnityAction<object>(Out);
+
+        EventManager.StartListening("pseudoTeleporterRed", ev_teleporter);
+        EventManager.StartListening("RedOut", ev_teleporter);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(anim.GetBool("isDead") == false && controlerOn){
+            movement.x = Input.GetAxisRaw("HorizontalRed");
+            movement.y = Input.GetAxisRaw("VerticalRed");
 
-        movement.x = Input.GetAxisRaw("HorizontalRed");
-        movement.y = Input.GetAxisRaw("VerticalRed");
 
-
-        if (movement.x != 0 || movement.y != 0)
-        {
-            anim.SetBool("isWalking", true);
-            anim.SetFloat("horizontal", movement.x);
-            anim.SetFloat("vertical", movement.y);
+            if (movement.x != 0 || movement.y != 0)
+            {
+                anim.SetBool("isWalking", true);
+                anim.SetFloat("horizontal", movement.x);
+                anim.SetFloat("vertical", movement.y);
+            }
+            else anim.SetBool("isWalking", false);
         }
-        else anim.SetBool("isWalking", false);
 
-
+        else if(!controlerOn){
+            movement.x = 0;
+            movement.y = 1;
+            rig.transform.rotation *= Quaternion.Euler(0, 0, 1.0f);
+        }
     }
 
     private void FixedUpdate()
@@ -119,11 +138,21 @@ public class playerRed : MonoBehaviour
         StartCoroutine(danceVictory());
     }
 
+    public void Teleportation(object teleporter)
+    {
+        controlerOn = false;
+    }
+
     private void Flip() {
         m_facingRight = !m_facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }    
+
+    public void Out(object obj)
+    {
+        Destroy(gameObject);
+    }
 }
   

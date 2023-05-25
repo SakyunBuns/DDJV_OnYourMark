@@ -15,7 +15,7 @@ public class passCheckPoint : MonoBehaviour
         EventManager.StartListening("checkPoint", ev_checkPoint);
     }
 
-    private void CheckPoint(object obj)
+    private void CheckPoint(object useless)
     {
         Destroy(gameObject);
     }

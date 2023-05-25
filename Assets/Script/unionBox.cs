@@ -28,7 +28,6 @@ public class unionBox : MonoBehaviour
         {
             BothPlayerInBox();
         }
-        print("here " + redInBox + " " + greenInBox);
     }
 
     void BothPlayerInBox() {

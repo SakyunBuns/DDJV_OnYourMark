@@ -8,6 +8,7 @@ public class greenKey : MonoBehaviour
     private int keyNumber = 0;
 
     private Rigidbody2D rig;
+    
 
     private void Start(){
         rig = GetComponent<Rigidbody2D>();
@@ -21,6 +22,7 @@ public class greenKey : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.tag == "PlayerGreen"){
             GreenKeyCollected();
+            
             GameObject redKeySpot = rig.transform.parent.gameObject;
             DestroyChildObject(redKeySpot, "GreenKey");
             DestroyChildObject(redKeySpot, "KeyShadow");

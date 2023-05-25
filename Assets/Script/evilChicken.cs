@@ -6,7 +6,6 @@ public class evilChicken : MonoBehaviour
 {
     private bool m_facingRight = true;
 
-
     private Rigidbody2D m_rig;
     private Animator m_anim;
 
@@ -21,9 +20,11 @@ public class evilChicken : MonoBehaviour
     private float m_lineLength;
 
     private Vector3 rayDirection1;
-    private Vector3 rayDirection2;
 
     private bool m_seeingPlayer;
+
+    [SerializeField]
+    private Transform seenFX;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,6 @@ public class evilChicken : MonoBehaviour
         RaycastHit2D hit2DPlayerOne = Physics2D.Raycast(transform.position, rayDirection1, m_lineLength, LayerMask.GetMask("Player"));
         
 
-
         if (hit2DPlayerOne.collider != null && !didHitWall)
         {
             m_seeingPlayer = true;
@@ -75,6 +75,7 @@ public class evilChicken : MonoBehaviour
             {
                 //StartCoroutine(Errance());
                 m_seeingPlayer = false;
+                Instantiate(seenFX, transform.position + Vector3.down, Quaternion.identity);
             }
         }
 
@@ -92,6 +93,14 @@ public class evilChicken : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Interactable")
+        {
+            Destroy(gameObject);
+        }
+
+    }
     //IEnumerator Errance()
     //{
     //    while (true)

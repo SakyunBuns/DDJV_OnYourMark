@@ -130,6 +130,18 @@ public class playerRed : MonoBehaviour
             //}
         }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy")
+        {
+            EventManager.TriggerEvent("RedBeenHit", transform.position);
+            anim.SetBool("isDead", true);
+            movement = Vector2.zero;
+
+        }
+    }
+
     public IEnumerator Death()
     {
         anim.SetBool("isDead", true);

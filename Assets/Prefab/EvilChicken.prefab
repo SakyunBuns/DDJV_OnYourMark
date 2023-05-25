@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4772624118540165185}
   - component: {fileID: 4772624118540165198}
   - component: {fileID: 4772624118540165197}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EvilChicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,9 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195738b9ef89e9f4b83404188961e9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 2
+  m_speed: 1
   player1: {fileID: 0}
-  m_lineLength: 150
+  m_lineLength: 5
+  seenFX: {fileID: 8953264713256607884, guid: 87ee7299dd44ed747af24dbb91bcd33b, type: 3}
 --- !u!50 &4772624118540165198
 Rigidbody2D:
   serializedVersion: 4

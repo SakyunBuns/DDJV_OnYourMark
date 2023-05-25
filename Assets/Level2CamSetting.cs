@@ -13,6 +13,7 @@ public class Level2CamSetting : MonoBehaviour
 
     private bool condition1 = false;
     private bool condition2 = false;
+    private bool condition3 = false;
 
     [SerializeField]
     private float speed;
@@ -27,18 +28,21 @@ public class Level2CamSetting : MonoBehaviour
     void FixedUpdate()
     {
         float posX = 0;
-        if (player1.position.y >= 5 || player2.position.y >= 5 && !condition1)
+        if ((player1.position.y >= 5 || player2.position.y >= 5) && !condition1)
         {
             speed = 0.02f;
             condition1 = true;
         }
-        if (player1.position.y >= 15 || player2.position.y >= 15 && !condition2)
+        else if ((player1.position.y >= 15 || player2.position.y >= 15) && !condition2)
         {
             speed = 0.02f;
             condition2 = true;
-            posX = (player1.position.x + player2.position.x) / 2;
         }
-        print(posX );
+        else if (transform.position.y >= 35 && !condition3) {
+            speed = 0;
+            condition3 = true;
+        }
+        posX = (player1.position.x + player2.position.x) / 2;
         m_camera.transform.position = new Vector3(posX, m_camera.transform.position.y, m_camera.transform.position.z);
         m_camera.transform.position += new Vector3(0, speed, 0);
     }

@@ -17,7 +17,11 @@ public class playerRed : MonoBehaviour
     [SerializeField]
     private float force;
 
+    [SerializeField]
+    private Transform prefabFruit;
+
     private bool controlerOn = true;
+    private bool canFire = true;
 
     private UnityAction<object> ev_teleporter;
     private UnityAction<object> ev_out;
@@ -51,6 +55,11 @@ public class playerRed : MonoBehaviour
                 anim.SetFloat("vertical", movement.y);
             }
             else anim.SetBool("isWalking", false);
+
+                if (Input.GetKeyDown(KeyCode.Keypad0) && canFire)
+            {
+                StartCoroutine(FireFruitCoroutine());
+            }
         }
 
         else if(!controlerOn){
@@ -140,6 +149,31 @@ public class playerRed : MonoBehaviour
         movement = Random.insideUnitSphere;
         StartCoroutine(danceVictory());
     }
+
+    private IEnumerator FireFruitCoroutine()
+    {
+        canFire = false;
+
+        Transform newFruit = Instantiate(prefabFruit, transform.position, Quaternion.identity);
+        Fruit fruitScript = newFruit.GetComponent<Fruit>();
+
+        Vector2 direction = Vector2.zero;
+        if (movement.x != 0 || movement.y != 0)
+        {
+            direction = new Vector2(movement.x, movement.y);
+        }
+        else
+        {
+            direction = (m_facingRight ? Vector2.left : Vector2.right);
+        }
+
+        fruitScript.SetDirection(direction.normalized);
+
+        yield return new WaitForSeconds(0.3f);
+
+        canFire = true;
+    }
+
 
     public void Teleportation(object teleporter)
     {

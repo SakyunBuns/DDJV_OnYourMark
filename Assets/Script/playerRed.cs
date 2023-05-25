@@ -55,8 +55,8 @@ public class playerRed : MonoBehaviour
 
         else if(!controlerOn){
             movement.x = 0;
-            movement.y = 1;
-            rig.transform.rotation *= Quaternion.Euler(0, 0, 1.0f);
+            movement.y = 0.5f;
+            rig.transform.rotation *= Quaternion.Euler(0, 0, 3.0f);
         }
     }
 
@@ -82,6 +82,8 @@ public class playerRed : MonoBehaviour
         {
             EventManager.TriggerEvent("RedBeenHit", transform.position);
             anim.SetBool("isDead", true);
+            movement = Vector2.zero;
+
         }
 
             //if (LayerMask.LayerToName(collision.gameObject.layer) == "Declancheur")

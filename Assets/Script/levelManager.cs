@@ -20,7 +20,7 @@ public class levelManager : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer rendu;
-    private float taux = 0.001f;
+    private float taux = 0.01f;
 
 
     // Start is called before the first frame update

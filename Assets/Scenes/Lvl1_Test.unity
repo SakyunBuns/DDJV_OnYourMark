@@ -38153,6 +38153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_player
       objectReference: {fileID: 0}
+    - target: {fileID: 1626318036437760396, guid: 3945d61862746e54cb31d0c214ef998f, type: 3}
+      propertyPath: prefabFruit
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3945d61862746e54cb31d0c214ef998f, type: 3}
 --- !u!1 &1141433776 stripped
@@ -39707,7 +39711,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09342927, y: 4.671476}
+  m_Offset: {x: -0.23507679, y: 5.700794}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -39718,7 +39722,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2706413, y: 0.5515375}
+  m_Size: {x: 4.8986893, y: 2.6101742}
   m_EdgeRadius: 0
 --- !u!114 &1401693752
 MonoBehaviour:
@@ -40738,6 +40742,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 711166940, guid: ea11ca92ff02e4740b94ecd07e96c30f, type: 3}
+      propertyPath: prefabFruit
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 472656209767120473, guid: ea11ca92ff02e4740b94ecd07e96c30f, type: 3}
       propertyPath: m_RootOrder
       value: 2

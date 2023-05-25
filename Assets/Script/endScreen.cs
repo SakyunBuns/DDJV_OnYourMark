@@ -22,4 +22,10 @@ public class endScreen : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(GameStart());
     }
+
+    public void OnQuit()
+    {
+        Application.Quit();
+        Debug.LogWarning("Application devrait etre fermer");
+    }
 }

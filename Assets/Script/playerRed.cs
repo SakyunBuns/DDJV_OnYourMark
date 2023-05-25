@@ -65,7 +65,7 @@ public class playerRed : MonoBehaviour
         else if(!controlerOn){
             movement.x = 0;
             movement.y = 0.5f;
-            vitesse = 1.5f;
+            vitesse = 1.0f;
             rig.transform.rotation *= Quaternion.Euler(0, 0, 3.0f);
         }
     }
@@ -95,39 +95,6 @@ public class playerRed : MonoBehaviour
             movement = Vector2.zero;
 
         }
-
-            //if (LayerMask.LayerToName(collision.gameObject.layer) == "Declancheur")
-            //{
-            //    Vector2 pushDirection = Vector2.zero;
-            //    if (collision.gameObject.CompareTag("Top"))
-            //    {
-            //        pushDirection = Vector2.down;
-            //    }
-            //    else if (collision.gameObject.CompareTag("Bottom"))
-            //    {
-            //        pushDirection = Vector2.up;
-            //    }
-            //    else if (collision.gameObject.CompareTag("Right"))
-            //    {
-            //        pushDirection = Vector2.left;
-            //    }
-            //    else
-            //    {
-            //        pushDirection = Vector2.right;
-            //    }
-            //    pushDirection.Normalize();
-            //    collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(pushDirection * force, ForceMode2D.Impulse);
-            //}
-            //else if (LayerMask.LayerToName(collision.gameObject.layer) == "Ennemi")
-            //{
-            //    StartCoroutine(Death());
-            //}
-            //else if (LayerMask.LayerToName(collision.gameObject.layer) == "Victory")
-            //{
-            //    movement = Vector2.zero;
-            //    anim.SetBool("dancing", true);
-            //    StartCoroutine(danceVictory());
-            //}
         }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -152,15 +119,6 @@ public class playerRed : MonoBehaviour
             
     }
 
-    IEnumerator danceVictory()
-    {
-        float randFloat = Random.Range(0.5f, 1.5f);
-        yield return new WaitForSeconds(Random.Range(0.8f, 2.0f));
-        movement = Random.insideUnitSphere;
-        yield return new WaitForSeconds(randFloat);
-        movement = Random.insideUnitSphere;
-        StartCoroutine(danceVictory());
-    }
 
     private IEnumerator FireFruitCoroutine()
     {

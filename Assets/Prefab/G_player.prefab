@@ -328,3 +328,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 3
   force: 2
+  prefabFruit: {fileID: 699308867197364476, guid: 3ee60871552f4dc4f8e577dff350fdb6, type: 3}

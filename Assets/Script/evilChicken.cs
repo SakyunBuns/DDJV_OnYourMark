@@ -58,7 +58,6 @@ public class evilChicken : MonoBehaviour
         {
             //didHitWall = true;
             lineLengthJoueur = hit2DWallPlayerOne.distance;
-            print("wall");
         }
 
         RaycastHit2D hit2DPlayerOne = Physics2D.Raycast(transform.position, rayDirection1, m_lineLength, LayerMask.GetMask("Player"));
@@ -68,7 +67,6 @@ public class evilChicken : MonoBehaviour
         if (hit2DPlayerOne.collider != null && !didHitWall)
         {
             m_seeingPlayer = true;
-            print("player");
             m_movement =  rayDirection1;
         }
         else

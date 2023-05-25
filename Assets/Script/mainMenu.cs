@@ -67,7 +67,7 @@ public class mainMenu : MonoBehaviour
         for (int nb_fx = 0; nb_fx < 15; nb_fx++) {
             Vector3 randVect3 = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitY, limitY), 0);
             Instantiate(m_sparkleVFX, transform.position + randVect3, transform.rotation);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
         EventManager.TriggerEvent("PlayerReachedObjective", "allo");
     }
